@@ -1,0 +1,69 @@
+{
+  "files.readonlyInclude": {
+    "c:/SatSDK/include/*.h": true
+  },
+ "actionButtons": {
+   "commands": [
+     {
+       "name": "$(checklist) Проект",
+       "color": "#00ff00",
+       "useVsCodeApi": true,
+       "tooltip": "Изменить состав файлов проекта",
+       "command": "workbench.action.tasks.runTask",
+       "args": [
+         "Edit project"
+       ]
+     },
+     {
+       "name": "$(checklist) Ресурсы",
+       "color": "#00ff00",
+       "useVsCodeApi": true,
+       "tooltip": "Изменить состав файлов ресурсов",
+       "command": "workbench.action.tasks.runTask",
+       "args": [
+         "Edit resourses"
+       ]
+     },
+     {
+       "name": "$(remote-explorer) Эмулятор ПЛК",
+       "color": "yellow",
+       "useVsCodeApi": true,
+       "tooltip": "Запуск программы эмулятора ПЛК",
+       "command": "workbench.action.tasks.runTask",
+       "args": [
+         "Start SatPlcImit"
+       ]
+     },
+     {
+       "name": "$(chip) Прошивка",
+       "color": "#ff8080",
+       "useVsCodeApi": true,
+       "tooltip": "Записать программу в ПЛК",
+       "command": "workbench.action.tasks.runTask",
+       "args": [
+         "Flash program"
+       ]
+     },
+     {
+       "name": "$(check-all) Компилировать",
+       "color": "#80ff80",
+       "useVsCodeApi": true,
+       "tooltip": "Компилировать файлы проекта",
+       "command": "workbench.action.tasks.runTask",
+       "args": [
+         "Build All"
+       ]
+     }
+   ],
+   "reloadButton": null,
+   "loadNpmCommands": false
+},
+"files.associations": {
+  "satscr.h": "c",
+  "satparams.h": "c",
+  "satmem.h": "c",
+  "modbus.h": "c",
+  "satplc.h": "c",
+  "stdlib.h": "c"
+}
+}

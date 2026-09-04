@@ -1,0 +1,8 @@
+*.bin
+*.lst
+*.map
+*.o
+*.out
+BROWSE.VC.DB
+BROWSE.VC.DB-shm
+BROWSE.VC.DB-wal
