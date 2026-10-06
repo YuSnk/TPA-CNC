@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "SatPLC",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${env:SAT_SDK_PATH}\\include"
+            ],
+            "defines": [
+            ],
+            "compilerPath": "${env:RISCV_INSTALL_PATH}\\bin\\riscv32-unknown-elf-gcc.exe",
+            "cStandard": "c23",
+            "cppStandard": "c++23",
+            "intelliSenseMode": "gcc-arm",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
+            },
+            "compilerArgs": [
+                "-nostdinc",
+                "-nostdlib",
+                "-nostdinc++",
+                "-ffreestanding"
+            ]
+        }
+    ],
+    "version": 4
+}

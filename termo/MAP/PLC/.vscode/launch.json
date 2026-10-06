@@ -1,0 +1,62 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Наладка в эмуляторе",
+            "type": "cppdbg",
+            "request": "launch",
+            "externalConsole": false,
+            "stopAtEntry": false,
+            "program": "${workspaceRoot}/main.out",
+            "MIMode": "gdb",
+            "cwd": "${workspaceRoot}",
+            "miDebuggerPath": "${env:RISCV_INSTALL_PATH}\\bin\\riscv32-unknown-elf-gdb.exe",
+            "miDebuggerServerAddress": "127.0.0.1:2159",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Reduce gdb verbosity",
+                    "text": "set print thread-events off",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Start SatPlcImit"
+        },
+        {
+            "name": "Наладка в ПЛК",
+            "type": "cppdbg",
+            "request": "launch",
+            "externalConsole": false,
+            "stopAtEntry": false,
+            "program": "${workspaceRoot}/main.out",
+            "MIMode": "gdb",
+            "cwd": "${workspaceRoot}",
+            "miDebuggerPath": "${env:RISCV_INSTALL_PATH}\\bin\\riscv32-unknown-elf-gdb.exe",
+            "miDebuggerServerAddress": "${input:ServerAddress}",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Reduce gdb verbosity",
+                    "text": "set print thread-events off",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "ServerAddress",
+            "description": "IP-адрес и порт",
+            "default": "192.168.1.10:2159",
+            "type": "promptString"
+        }
+    ]
+}

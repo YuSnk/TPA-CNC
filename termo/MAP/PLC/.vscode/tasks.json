@@ -1,0 +1,84 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Build All",
+			"isBackground": false,
+			"command": "${workspaceRoot}/build.bat",
+			"args": [],
+			"options": {},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "shell",
+			"label": "Start SatPlcImit",
+			"isBackground": false,
+			"command": "start",
+			"args": [
+				"${env:SAT_SDK_PATH}\\bin\\SatPlcImit.exe",
+				"'-b${workspaceRoot}\\main.bin -c${workspaceRoot}\\.vscode'"
+			],
+			"options": {},
+			"group": {
+				"kind": "none",
+				"isDefault": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"type": "shell",
+			"label": "Flash program",
+			"isBackground": false,
+			"command": "start",
+			"args": [
+				"${env:SAT_SDK_PATH}\\bin\\SatPlcImit.exe",
+				"'-p${workspaceRoot}\\main.bin -c${workspaceRoot}\\.vscode'"
+			],
+			"options": {},
+			"group": {
+				"kind": "none",
+				"isDefault": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"type": "shell",
+			"label": "Edit resourses",
+			"isBackground": false,
+			"command": "start",
+			"args": [
+				"${env:SAT_SDK_PATH}\\bin\\SatPlcImit.exe",
+				"'-e${workspaceRoot}\\resources -c${workspaceRoot}\\.vscode'"
+			],
+			"options": {},
+			"group": {
+				"kind": "none",
+				"isDefault": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"type": "shell",
+			"label": "Edit project",
+			"isBackground": false,
+			"command": "start",
+			"args": [
+				"${env:SAT_SDK_PATH}\\bin\\C23project.exe",
+				"'-d${workspaceRoot} -c${workspaceRoot}\\.vscode'"
+			],
+			"options": {},
+			"group": {
+				"kind": "none",
+				"isDefault": false
+			},
+			"problemMatcher": []
+		}
+	]
+}

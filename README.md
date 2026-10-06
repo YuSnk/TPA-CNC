@@ -2,17 +2,14 @@
 
 Программа для настройки и управления двигателем WECON VD2F / VD2.
 
-## SATURN-PLC C23 (`plc/`)
+## SATURN-PLC C23 пресс (`plc/`)
 
-Прошивка пресс-формы для контроллера Saturn-PLC (C23). Modbus-master к VD2 в скоростном режиме (`P00-01=2`): трапеция на мастере, конец хода по энкодеру `U0-13`, настройка нуля тихим моментом до Er.37.
+Прошивка пресс-формы. Исходники: `plc/MAP/PLC/`.
 
-Исходники: `plc/MAP/PLC/` (`main.c`, `vd2.c`, `press.c`).
+## SATURN-PLC C23 термо (`termo/`)
 
-Сборка (нужны `SAT_SDK_PATH` и `RISCV_INSTALL_PATH`):
+Проект SatPlcStudio **TPA-TERMO**: Saturn-PLC, C23, IP `192.168.1.10`.
 
-```bat
-cd plc\MAP\PLC
-build.bat
-```
+Четыре зоны нагрева шнека/сопла: МВ110 (RTU #16) + МР-DOR13 (RTU #1), уставки в EEPROM, карта Modbus TCP с адреса 8192 (526 регистров).
 
-Открыть папку `plc\MAP\PLC` в Cursor / SatPlcStudio. Клавиши: ↑ цикл смыкания, ↓ размыкание, ← ноль, → стоп. DI1 пуск, DI2 стоп, DI3 ноль.
+Исходники: `termo/MAP/PLC/` (`main.c`, `thermo.c`). Сборка: `cd termo\MAP\PLC` и `build.bat`.
